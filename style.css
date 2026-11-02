@@ -1,0 +1,162 @@
+/* =======================================================
+   CUSTOM SCRAPBOOK AESTHETIC
+======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Soft corkboard or desk background pattern */
+    background-color: #fdfbf7;
+    background-image: radial-gradient(#d3c9b8 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.scrapbook {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+/* --- Paper Note Style (Main cards) --- */
+.paper-note {
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.08);
+    position: relative;
+    /* Notebook lines effect */
+    background-image: repeating-linear-gradient(transparent, transparent 31px, #e0e8f5 31px, #e0e8f5 32px);
+    line-height: 32px;
+}
+
+.paper-note h1, .paper-note h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    color: #ff6b81;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.to-text {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: #555;
+}
+
+.pin {
+    width: 15px;
+    height: 15px;
+    background: #ff4757;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3), 2px 5px 5px rgba(0,0,0,0.2);
+}
+
+.tape {
+    width: 120px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- Sticky Notes (The Story) --- */
+.story-board {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    align-items: center;
+}
+
+.sticky-note {
+    width: 350px;
+    padding: 30px;
+    box-shadow: 3px 5px 15px rgba(0,0,0,0.1);
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+
+.sticky-note:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
+
+.sticky-note h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.yellow { background: #fdfd96; color: #5a5a1f; }
+.blue { background: #b5e2ff; color: #1f425a; align-self: flex-end; margin-right: 10%; }
+.pink { background: #ffb5e8; color: #5a1f42; align-self: flex-start; margin-left: 10%; }
+
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(4deg); }
+
+/* --- Buttons --- */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    position: relative;
+    min-height: 80px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.btn:active { transform: translateY(2px); }
+
+.btn-okay { background: #dfe4ea; color: #2f3542; }
+.btn-yes { background: #7bed9f; color: #2f3542; transform-origin: center; }
+.btn-no { background: #ff7f50; color: #fff; position: relative; z-index: 100; }
+
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+
+.signature {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #3742fa;
+}
+
+@media (max-width: 768px) {
+    .blue, .pink { align-self: center; margin: 0; }
+    .sticky-note { width: 90%; }
+    .paper-note { padding: 30px 20px; }
+}
